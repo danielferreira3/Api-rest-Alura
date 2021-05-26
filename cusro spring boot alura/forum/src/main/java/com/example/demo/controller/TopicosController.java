@@ -19,9 +19,18 @@ public class TopicosController {
 	private TopicoRepository topicoRepository;
 	
 	
-	public List<TopicoDto> lista(){
-		List<Topico> topicos = topicoRepository.findAll();
-		return TopicoDto.converter(topicos);
+	public List<TopicoDto> lista(String nomeCurso){
+		if(nomeCurso == null) {
+			List<Topico> topicos = topicoRepository.findAll();
+			//retorna a lista de topicos convertido para dto
+			return TopicoDto.converter(topicos);
+		}else {
+			//tras a lista de topicos filtrando pelo nome do curso
+			List<Topico> topicos = topicoRepository.findByCursoNome(nomeCurso);
+			return TopicoDto.converter(topicos);
+		}
+			
+		
 	}
 	
 	

@@ -34,7 +34,7 @@ public class TopicoDto {
 	}
 
 	public static List<TopicoDto> converter(List<Topico> topicos) {
-		// TODO Auto-generated method stub
+		// pega a lista de topicos e converte para topicoDto
 		return topicos.stream().map(TopicoDto::new).collect(Collectors.toList());
 	}
 	
