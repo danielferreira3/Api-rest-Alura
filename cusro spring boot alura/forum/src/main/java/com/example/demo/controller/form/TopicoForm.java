@@ -1,13 +1,21 @@
 package com.example.demo.controller.form;
 
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import com.example.demo.model.Curso;
 import com.example.demo.model.Topico;
 import com.example.demo.repository.CursoRepository;
 
+
 public class TopicoForm {
 	
+	@NotNull @NotEmpty
 	private String titulo;
+	@NotNull @NotEmpty
 	private String mensagem;
+	@NotNull @NotEmpty
 	private String nomeCurso;
 	public String getTitulo() {
 		return titulo;
